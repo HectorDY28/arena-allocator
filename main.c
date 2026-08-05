@@ -5,20 +5,23 @@
 int main(void)
 {
     Arena arena;
-
+    //alocando uns bagui ai
     arena_init(&arena, 1024 * 1024);
 
     if (arena.buffer == NULL) {
+        // ;-;
         fprintf(stderr, "Falha ao criar arena.\n");
         return EXIT_FAILURE;
     }
 
     printf("[*] Arena criada em %p\n", (void *)arena.buffer);
 
+    // pausa pro cafezinho
     char *msg = arena_alloc(&arena, 64);
     int *nums = arena_alloc(&arena, 10 * sizeof(*nums));
 
     if (msg == NULL || nums == NULL) {
+        // economizar nos meus 3 mega de ram
         fprintf(stderr, "Falha na alocacao.\n");
         arena_destroy(&arena);
         return EXIT_FAILURE;
@@ -26,6 +29,7 @@ int main(void)
 
     snprintf(msg, 64, "Arena funcionando!");
 
+    // alimentado o bichinho
     for (int i = 0; i < 10; i++)
         nums[i] = i;
 
