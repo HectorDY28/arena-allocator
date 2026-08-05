@@ -50,8 +50,8 @@ Ideal for game loops, compilers, request scopes. 10-100x faster than `malloc` fo
 0x00000400 ├─────────────────┤
            │ ALLOC  │ <- arena_alloc(64)
 0x00000440 ├─────────────────┤
-           │ ALLOC  │
-0x00100000 └─────────────────┘ <- munmap()
+           │ ALLOC  │          <- munmap()
+0x00100000 └─────────────────┘
 ```
 
 #### ▓█ BOOT SEQUENCE
